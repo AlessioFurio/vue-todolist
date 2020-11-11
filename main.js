@@ -18,7 +18,7 @@ var app = new Vue({
 		addTodo () {  // creo funzione per aggiungere un todo
 			var newTodo = this.todoText.trim(); // salvo in var il contenuto dell' input tramite il v-model
 			if (!newTodo) {return;} // se l'input e' vuoto non aggiunge un nuovo todo
-			this.todos.push({text: newTodo,}); // pusho new todo nell' array todos
+			this.todos.push({text: newTodo}); // pusho new todo nell' array todos
 			this.todoText = ''; // reimposto a stringa vuota il contenuto dell' input
 		},
         removeElement(index) {

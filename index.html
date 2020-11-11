@@ -15,14 +15,14 @@
         <div id="root">
 	        <h2>Todo</h2>
 	        <ul>
-		        <li v-for="todo in todos">
+		        <li v-for="(todo, index) in todos ">
     			<label>
-    				<span @click="removeElement()">{{todo.text}}</span>
+    				<span @click="removeElement(index)">{{todo.text}}</span>
     			</label>
 		        </li>
 	        </ul>
 	        <p>
-        		<input type="text" v-model="todoText" placeholder="aggiungi un nuovo todo" />
+        		<input v-on:keyup.enter="addTodo()" type="text" v-model="todoText" placeholder="aggiungi un nuovo todo" />
         		<button @click="addTodo()" class="btn btn-primary btn-sm">Aggiungi Item</button>
 	        </p>
         </div>
